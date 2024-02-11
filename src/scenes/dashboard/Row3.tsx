@@ -215,68 +215,24 @@
 // }
 
 // export default Row3
-import React, { useMemo } from 'react';
+import React from 'react';
 import DashboardBox from '@/components/DashboardBox';
-import { useGetKpisQuery, useGetProductsQuery, useGetTransactionsQuery } from '@/state/Api';
-import { DataGrid, GridCellParams } from '@mui/x-data-grid';
+
+
 import BoxHeader from '@/components/BoxHeader';
-import FlexBetween from "@/components/FlexBetween";
+
 import { Box, Typography, useTheme } from "@mui/material";
-import { Cell, Pie, PieChart } from "recharts";
+
 
 const Row3 = () => {
   const { palette } = useTheme();
-  const { data: kpiData } = useGetKpisQuery();
-  const { data: productData } = useGetProductsQuery();
 
 
 
-  const productColumns = [
-    {
-      field: "_id",
-      headerName: "id",
-      flex: 1,
-    },
-    {
-      field: "_expense",
-      headerName: "expense",
-      flex: 0.5,
-      renderCell: (params: GridCellParams) => `$${params.value}`,
-    },
-    {
-      field: "price",
-      headerName: "Price",
-      flex: 0.5,
-      renderCell: (params: GridCellParams) => `$${params.value}`,
-    }
-  ];
 
-  const { data: transactionData } = useGetTransactionsQuery();
-  const transactionColumns = [
-    {
-      field: "_id",
-      headerName: "id",
-      flex: 1,
-    },
-    {
-      field: "buyer",
-      headerName: "Buyer",
-      flex: 0.67,
-    },
-    {
-      field: "amount",
-      headerName: "Amount",
-      flex: 0.35,
-      renderCell: (params: GridCellParams) => `$${params.value}`,
-    },
-    {
-      field: "productIds",
-      headerName: "Count",
-      flex: 0.1,
-      renderCell: (params: GridCellParams) =>
-        (params.value as Array<string>).length,
-    },
-  ];
+  
+
+  
 
   return (
     <>
@@ -299,10 +255,7 @@ const Row3 = () => {
           ></Box>
         </Box>
         <Typography margin="0 1rem" variant="h6">
-          Orci aliquam enim vel diam. Venenatis euismod id donec mus lorem etiam
-          ullamcorper odio sed. Ipsum non sed gravida etiam urna egestas
-          molestie volutpat et. Malesuada quis pretium aliquet lacinia ornare
-          sed. In volutpat nullam at est id cum pulvinar nunc.
+          integrates various data analysis functionalities to offer users comprehensive insights into their financial activities. Through meticulous expense analysis, the app examines spending patterns across diverse categories over time, aiding users in understanding their financial disbursements. Income tracking features enable users to monitor income sources and variations, facilitating a clear understanding of their financial inflows. 
         </Typography>
       </DashboardBox>
     </>
